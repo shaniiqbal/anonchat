@@ -68,6 +68,7 @@ var showdata = function(){
 					})
 					.catch(function(error) {
 						console.error("Error writing document: ", error);
+						avatarText = "AB";
 					});
 					
 					var date = new Date(chat.data().createdAt * 1000);
