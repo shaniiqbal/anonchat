@@ -34,18 +34,19 @@ var showdata = function(){
 							//console.log("Document successfully written!", userdata.data().createdAt);
 							if(displayName){
 								avatararray = displayName.split(" ");	
+								if(avatararray){
+									let counter = 0;
+									avatararray.forEach(function(item){
+										
+										avatarText = item.charAt(0);
+										counter++;
+									});
+								}else{
+									avatarText = displayName.charAt(0);
+								}	
 							}
 							
-							if(avatararray){
-								let counter = 0;
-								avatararray.forEach(function(item){
-									
-									avatarText = item.charAt(0);
-									counter++;
-								});
-							}else{
-								avatarText = displayName.charAt(0);
-							}						
+												
 					})
 					.catch(function(error) {
 						console.error("Error writing document: ", error);
