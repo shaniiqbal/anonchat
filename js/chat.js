@@ -30,11 +30,13 @@ var showdata = function(){
 							if(allAvatar.includes(chat.data().userid)){
 								allAvatar.push(chat.data().userid);
 							}
+							if(userdata.data()){
 							displayName = userdata.data().nickname;
+						
 							//console.log("Document successfully written!", userdata.data().createdAt);
 							if(displayName){
 								avatararray = displayName.split(" ");	
-							}
+							}	}
 							
 							if(avatararray){
 								let counter = 0;
@@ -68,7 +70,6 @@ var showdata = function(){
 					})
 					.catch(function(error) {
 						console.error("Error writing document: ", error);
-						avatarText = "AB";
 					});
 					
 					var date = new Date(chat.data().createdAt * 1000);
