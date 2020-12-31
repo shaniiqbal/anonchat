@@ -28,7 +28,6 @@ var showdata = function(){
 				response.docs.forEach(function(chat){
 					firebase.firestore().collection("users").doc(chat.data().userid).get()
 					.then(function(userdata) {
-						
 							displayName = userdata.data().nickname;
 							console.log("Document successfully written!", userdata.data().nickname);
 							avatararray = displayName.split(" ");	
@@ -113,6 +112,36 @@ var insertchat = function(){
 	});
 		
 }
+// Get the input field
+var input = document.getElementById("message");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+	var message = document.getElementById("message").value;
+	if(!message){
+		alert("message is required");
+		return;
+	}
+	//console.log(message);
+	firebase.firestore().collection("chat").add({
+    message: message,
+	userid:currentUser,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()  
+	})
+	.then(function(docRef) {
+		console.log("Document successfully written!",docRef);
+		document.getElementById("message").value = "";
+	})
+	.catch(function(error) {
+		console.error("Error writing document: ", error);
+	});
+    // Trigger the button element with a click
+  }
+});
 
 
 var logout = function(){
