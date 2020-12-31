@@ -21,7 +21,7 @@ var showdata = function(){
 			you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
 			
 			var allAvatar = [];
-			var allchat = firebase.firestore().collection("chat").orderBy("createdAt");
+			var allchat = firebase.firestore().collection("chat");
 			allchat.onSnapshot(function(response) {
 				document.getElementById("mCSB_1_container").innerHTML = "";
 				response.docs.forEach(function(chat){
