@@ -47,10 +47,8 @@ var showdata = function(){
 							}
 							
 												
-					})
-					.catch(function(error) {
-						console.error("Error writing document: ", error);
 					});
+					
 					
 					var date = new Date(chat.data().createdAt * 1000);
 					var hours = date.getHours();
@@ -69,7 +67,9 @@ var showdata = function(){
 						+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
 						+'</div>';
 					}					
-				})
+				}).catch(function(error) {
+						console.error("Error writing document: ", error);
+					});
 				
 				setTimeout(function(){
 					$('html,body').scrollTop( $('html,body').height() );
