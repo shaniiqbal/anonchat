@@ -45,7 +45,26 @@ var showdata = function(){
 								});
 							}else{
 								avatarText = displayName.charAt(0);
-							}						
+							}
+						
+						/*	var date = new Date(chat.data().createdAt * 1000);
+							var hours = date.getHours();
+							var minutes = "0" + date.getMinutes();
+							var seconds = "0" + date.getSeconds();
+							if(	currentUser == chat.data().userid){
+								document.getElementById("mCSB_1_container").innerHTML += '<div class="message new">'
+								+'<figure class="avatar"><i>'+avatarText+'</i></figure>'+
+								chat.data().message
+								+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
+								+'</div>';
+							}else{
+								document.getElementById("mCSB_1_container").innerHTML += '<div class="message message-personal new">'
+								+'<figure class="avatar"><i>'+avatarText+'</i></figure>'+
+								chat.data().message
+								+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
+								+'</div>';
+							}		*/
+						
 					})
 					.catch(function(error) {
 						console.error("Error writing document: ", error);
@@ -68,7 +87,7 @@ var showdata = function(){
 						+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
 						+'</div>';
 					}					
-				});
+				})
 				
 				setTimeout(function(){
 					$('html,body').scrollTop( $('html,body').height() );
