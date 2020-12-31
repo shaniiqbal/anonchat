@@ -87,7 +87,7 @@ var showdata = function(){
 						+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
 						+'</div>';
 					}					
-				})
+				});
 				
 				setTimeout(function(){
 					$('html,body').scrollTop( $('html,body').height() );
