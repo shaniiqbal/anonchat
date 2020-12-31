@@ -22,7 +22,7 @@ var showdata = function(){
 			you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
 			
 			
-			var allchat = firebase.firestore().collection("chat").orderBy("createdAt", "asc");
+			var allchat = firebase.firestore().collection("chat");
 			allchat.onSnapshot(function(response) {
 				document.getElementById("mCSB_1_container").innerHTML = "";
 				response.docs.forEach(function(chat){
@@ -94,6 +94,10 @@ var showdata = function(){
 };
 var insertchat = function(){
 	var message = document.getElementById("message").value;
+	if(!message){
+		alert("message is required");
+		return;
+	}
 	//console.log(message);
 	firebase.firestore().collection("chat").add({
     message: message,
