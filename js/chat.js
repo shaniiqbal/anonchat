@@ -31,23 +31,27 @@ var showdata = function(){
 								allAvatar.push(chat.data().userid);
 							}
 							if(userdata.data()){
-							displayName = userdata.data().nickname;
-						
-							//console.log("Document successfully written!", userdata.data().createdAt);
-							if(displayName){
-								avatararray = displayName.split(" ");	
-							}	}
+								displayName = userdata.data().nickname;
 							
-							if(avatararray){
-								let counter = 0;
-								avatararray.forEach(function(item){
-									
-									avatarText = item.charAt(0);
-									counter++;
-								});
+								//console.log("Document successfully written!", userdata.data().createdAt);
+								if(displayName){
+									avatararray = displayName.split(" ");	
+								}	
+								if(avatararray){
+									let counter = 0;
+									avatararray.forEach(function(item){
+										
+										avatarText = item.charAt(0);
+										counter++;
+									});
+								}else{
+									avatarText = displayName.charAt(0);
+								}
 							}else{
-								avatarText = displayName.charAt(0);
+								avatarText = "AB";
 							}
+							
+							
 						
 						/*	var date = new Date(chat.data().createdAt * 1000);
 							var hours = date.getHours();
