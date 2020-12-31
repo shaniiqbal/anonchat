@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no shrink-to-fit=no">
+    <title>Anonymous Chat</title>
+    <link href="assets/kit/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fonts/montserrat/font.css" rel="stylesheet">
+    <link href="assets/fonts/grupo/css/icons.css" rel="stylesheet">
+    <link href="assets/css/ajx.css" rel="stylesheet">
+    <link href="assets/css/gr-sign.css" rel="stylesheet">
+    <link href="assets/css/grscroll.css" rel="stylesheet">
+    </head>
+<body class="sign two bgone">
+   
+    <section>
+        <div>
+            <div>
+                <div class='box ltr'>
+                    <div class="logo">
+                       Anonymous Chat
+                    </div>
+                    <div class="errormsg">
+                        <span></span>
+                    </div>
+                    <div class="swithlogin">
+                       
+                    </div>
+                    <form id="registerForm" autocomplete='off' class='gr_sign' onsubmit="event.preventDefault(),register()">
+                        <div class="elements">
+                            <input type="hidden" name="act" value=1 />
+                            <input type="hidden" name="do" class='doz' value='login' />
+                            <div class='register'>
+                                <label><i class="gi-user"></i>
+                                    <input type="text" autocomplete='grautocmp' name="fname" placeholder="Full Name" />
+                                </label>
+                                <label><i class="gi-mail"></i>
+                                    <input type="email" autocomplete='grautocmp' name="email" placeholder="Email Address" />
+                                </label>
+                                <label><i class="gi-lock"></i>
+                                    <input type="password" class='gstdep' autocomplete='grautocmp' name="pass" placeholder="Password" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="regsep d-none"></div>
+                        <div class="sub">
+                            <span class='rmbr'>
+                                <i><b class="active"></b>
+                                    <input type="hidden" name="rmbr" value=1 />
+                                </i>
+                                Remember Me</span>
+                            <span class="doer" data-do="forgot">Forgot Password</span>
+                        </div>
+                        <div class="submitbtns">
+                            <input type="submit" class="submit" value="Register">
+                        </div>
+                        <div class="switch">
+                            <a href="login.html">
+                                <i>Already have an account?</i>
+                                <span>Login</span>
+                            </a>
+                        </div>
+                        <!--div class="footer">
+                            <ul>
+                                <li class='grpgopen' pg='about'>About</li>
+                                <li class='grpgopen' pg='terms'>Terms</li>
+                                <li class='grpgopen' pg='privacy'>Privacy</li>
+                                <li class='grpgopen' pg='contact'>Contact</li>
+                            </ul>
+                        </div-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="signbg"></div>
+    </body>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+<script src="./js/firebase_init.js"></script>
+<link href="assets/css/custom.css" rel="stylesheet">
+<script src="assets/kit/jquery/jquery-3.4.1.min.js"></script>
+<script src="assets/kit/jquery/jquery-migrate-1.4.1.min.js"></script>
+<script src="assets/kit/popper/umd/popper.min.js"></script>
+<script src="assets/kit/bootstrap/bootstrap.min.js"></script>
+<script src="assets/kit/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="assets/kit/jscookie/js.cookie.js"></script>
+<script src="assets/js/ajx.js"></script>
+<script src="assets/js/gr-sign.js"></script>
+</html>
