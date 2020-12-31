@@ -34,21 +34,22 @@ var showdata = function(){
 							//console.log("Document successfully written!", userdata.data().createdAt);
 							if(displayName){
 								avatararray = displayName.split(" ");	
-								if(avatararray){
-									let counter = 0;
-									avatararray.forEach(function(item){
-										
-										avatarText = item.charAt(0);
-										counter++;
-									});
-								}else{
-									avatarText = displayName.charAt(0);
-								}	
 							}
 							
-												
+							if(avatararray){
+								let counter = 0;
+								avatararray.forEach(function(item){
+									
+									avatarText = item.charAt(0);
+									counter++;
+								});
+							}else{
+								avatarText = displayName.charAt(0);
+							}						
+					})
+					.catch(function(error) {
+						console.error("Error writing document: ", error);
 					});
-					
 					
 					var date = new Date(chat.data().createdAt * 1000);
 					var hours = date.getHours();
@@ -67,9 +68,7 @@ var showdata = function(){
 						+'<div class="timestamp">'+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2)+'</div>'
 						+'</div>';
 					}					
-				}).catch(function(error) {
-						console.error("Error writing document: ", error);
-					});
+				});
 				
 				setTimeout(function(){
 					$('html,body').scrollTop( $('html,body').height() );
